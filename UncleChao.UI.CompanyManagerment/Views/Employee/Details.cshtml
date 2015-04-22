@@ -1,0 +1,52 @@
+﻿@model UncleChao.CompanyManagerment.Model.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Age)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Age)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Remark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remark)
+    </div>
+
+    <div class="display-field">
+        @Html.DisplayNameFor(model => model.Experience)
+    </div>
+    <div class="display-field">
+        <table>
+            @foreach (var exp in Model.Experience)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(experience => exp.Content)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

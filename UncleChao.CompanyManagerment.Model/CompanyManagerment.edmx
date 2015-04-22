@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CompanyManagerment.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CompanyManagermentStoreContainer">
+    <EntitySet Name="EmployeeSet" EntityType="CompanyManagerment.Store.EmployeeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExperienceSet" EntityType="CompanyManagerment.Store.ExperienceSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EmployeeExperience" Association="CompanyManagerment.Store.EmployeeExperience">
+      <End Role="Employee" EntitySet="EmployeeSet" />
+      <End Role="Experience" EntitySet="ExperienceSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EmployeeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ExperienceSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeExperience">
+    <End Role="Employee" Type="CompanyManagerment.Store.EmployeeSet" Multiplicity="1" />
+    <End Role="Experience" Type="CompanyManagerment.Store.ExperienceSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CompanyManagerment" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="CompanyManagermentContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeSet" EntityType="CompanyManagerment.Employee" />
+          <EntitySet Name="ExperienceSet" EntityType="CompanyManagerment.Experience" />
+          <AssociationSet Name="EmployeeExperience" Association="CompanyManagerment.EmployeeExperience">
+            <End Role="Employee" EntitySet="EmployeeSet" />
+            <End Role="Experience" EntitySet="ExperienceSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Age" Type="String" Nullable="true" />
+          <Property Name="Remark" Type="String" Nullable="true" />
+          <NavigationProperty Name="Experience" Relationship="CompanyManagerment.EmployeeExperience" FromRole="Employee" ToRole="Experience" />
+        </EntityType>
+        <EntityType Name="Experience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Remark" Type="String" Nullable="true" />
+          <NavigationProperty Name="Employee" Relationship="CompanyManagerment.EmployeeExperience" FromRole="Experience" ToRole="Employee" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="EmployeeExperience">
+          <End Type="CompanyManagerment.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="CompanyManagerment.Experience" Role="Experience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Experience">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CompanyManagermentStoreContainer" CdmEntityContainer="CompanyManagermentContainer">
+    <EntitySetMapping Name="EmployeeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CompanyManagerment.Employee)">
+        <MappingFragment StoreEntitySet="EmployeeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExperienceSet">
+      <EntityTypeMapping TypeName="IsTypeOf(CompanyManagerment.Experience)">
+        <MappingFragment StoreEntitySet="ExperienceSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

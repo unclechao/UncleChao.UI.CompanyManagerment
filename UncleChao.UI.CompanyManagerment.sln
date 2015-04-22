@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.UI.CompanyManagerment", "UncleChao.UI.CompanyManagerment\UncleChao.UI.CompanyManagerment.csproj", "{4F366776-56D0-4385-8A94-0151DB365076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.UI.CompanyManagerment.Tests", "UncleChao.UI.CompanyManagerment.Tests\UncleChao.UI.CompanyManagerment.Tests.csproj", "{EFFF5A30-B27E-4432-9DD2-BED98711A32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.Model", "UncleChao.CompanyManagerment.Model\UncleChao.CompanyManagerment.Model.csproj", "{E3008053-963E-4939-B196-8DCAC284C018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.IDao", "UncleChao.CompanyManagerment.IDao\UncleChao.CompanyManagerment.IDao.csproj", "{06641045-87A9-4522-BA70-03E046082FAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.EFDao", "UncleChao.CompanyManagerment.EFDao\UncleChao.CompanyManagerment.EFDao.csproj", "{F25EE9B3-0962-4CEB-B1DF-74B2DF4E9DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.SQLDao", "UncleChao.CompanyManagerment.SQLDao\UncleChao.CompanyManagerment.SQLDao.csproj", "{C7BFE2E3-83B8-4280-A10A-780C8D89869C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.IBLL", "UncleChao.CompanyManagerment.IBLL\UncleChao.CompanyManagerment.IBLL.csproj", "{D682635C-B909-4F09-BCAA-BC1EB814DC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.BLL", "UncleChao.CompanyManagerment.BLL\UncleChao.CompanyManagerment.BLL.csproj", "{399EC0F7-2939-4135-948A-A2B957334A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UncleChao.CompanyManagerment.AbstractFactory", "UncleChao.CompanyManagerment.AbstractFactory\UncleChao.CompanyManagerment.AbstractFactory.csproj", "{9F5AC5F5-AC8A-48AF-A27D-DC32F197AA30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F366776-56D0-4385-8A94-0151DB365076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F366776-56D0-4385-8A94-0151DB365076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F366776-56D0-4385-8A94-0151DB365076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F366776-56D0-4385-8A94-0151DB365076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFF5A30-B27E-4432-9DD2-BED98711A32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFF5A30-B27E-4432-9DD2-BED98711A32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFF5A30-B27E-4432-9DD2-BED98711A32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFF5A30-B27E-4432-9DD2-BED98711A32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3008053-963E-4939-B196-8DCAC284C018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3008053-963E-4939-B196-8DCAC284C018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3008053-963E-4939-B196-8DCAC284C018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3008053-963E-4939-B196-8DCAC284C018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06641045-87A9-4522-BA70-03E046082FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06641045-87A9-4522-BA70-03E046082FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06641045-87A9-4522-BA70-03E046082FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06641045-87A9-4522-BA70-03E046082FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F25EE9B3-0962-4CEB-B1DF-74B2DF4E9DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25EE9B3-0962-4CEB-B1DF-74B2DF4E9DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25EE9B3-0962-4CEB-B1DF-74B2DF4E9DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25EE9B3-0962-4CEB-B1DF-74B2DF4E9DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BFE2E3-83B8-4280-A10A-780C8D89869C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BFE2E3-83B8-4280-A10A-780C8D89869C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BFE2E3-83B8-4280-A10A-780C8D89869C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BFE2E3-83B8-4280-A10A-780C8D89869C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D682635C-B909-4F09-BCAA-BC1EB814DC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D682635C-B909-4F09-BCAA-BC1EB814DC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D682635C-B909-4F09-BCAA-BC1EB814DC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D682635C-B909-4F09-BCAA-BC1EB814DC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399EC0F7-2939-4135-948A-A2B957334A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399EC0F7-2939-4135-948A-A2B957334A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399EC0F7-2939-4135-948A-A2B957334A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399EC0F7-2939-4135-948A-A2B957334A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5AC5F5-AC8A-48AF-A27D-DC32F197AA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5AC5F5-AC8A-48AF-A27D-DC32F197AA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5AC5F5-AC8A-48AF-A27D-DC32F197AA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5AC5F5-AC8A-48AF-A27D-DC32F197AA30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
